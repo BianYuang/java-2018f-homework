@@ -1,0 +1,49 @@
+import java.util.Scanner;
+public class Sort {
+	public static void main(String[] args) {
+		// TODO Auto-generated method 
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("please enter an array and split with blank:");
+		String[] nums = null;
+		nums = scanner.nextLine().split(" ");
+		int arr[] = new int[nums.length];
+		for(int i = 0;i < nums.length;i++){
+			arr[i]=Integer.valueOf(nums[i]);
+		}
+		System.out.print("The array you have entered is: ");
+		for(int i = 0;i < nums.length;i++) {
+			if(i != arr.length-1) {
+				System.out.print(arr[i]+",");
+			}
+			else {
+				System.out.print(arr[i]);
+			}
+		}
+		//从控制台读取数组完毕
+		
+		System.out.println();
+		System.out.print("The array after sorting from small to large is: ");
+		
+		//对数组从小到大进行冒泡排序
+		for(int j = 0;j < nums.length;j++) {
+			for(int i = 0;i < nums.length-1;i++) {
+				if(arr[i] > arr[i+1]) {	
+					int temp = arr[i];
+					arr[i] = arr[i+1];
+					arr[i+1] = temp;
+				}
+			}
+		}
+		//排序完毕，输出数组
+		for(int i = 0;i < nums.length;i++) {
+			if(i != arr.length-1) {
+				System.out.print(arr[i]+",");
+			}
+			else {
+				System.out.print(arr[i]);
+			}
+		}
+	}
+}
+
+
